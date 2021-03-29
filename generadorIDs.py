@@ -2,10 +2,18 @@ import os
 from random import randrange
 
 def generar():
-    print("Cantidad de IDs que quieres generar")
-    cantidad = int(input())
-    print("Longitud de cada ID")
-    longitud = int(input())
+    cantidad = -1
+    longitud = -1
+    while cantidad <= 0:
+        print("Cantidad de IDs que quieres generar")
+        cantidad = int(input())
+        if cantidad <= 0:
+            print("introduce un numero mayor a 0")
+    while longitud <= 0:
+        print("Longitud de cada ID")
+        longitud = int(input())
+        if longitud <= 0:
+            print("introduce un numero mayor a 0")
     os.system("echo " + str(cantidad) + " IDs de " + str(longitud) + " caracteres>>./generadorIDs/id.txt")
     os.system("echo.>>./generadorIDs/id.txt")
     for i in range(cantidad):
