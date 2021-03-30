@@ -4,6 +4,12 @@ from random import randrange
 def generar():
     cantidad = -1
     longitud = -1
+    saltoLinea = "\n"
+    try:
+        fil = open(".\generadorIDs\IDs.txt", "w")
+    except:
+        os.system("mkdir generadorIDs")
+        fil = open(".\generadorIDs\IDs.txt", "w", newline='')
     while cantidad <= 0:
         print("Cantidad de IDs que quieres generar")
         cantidad = int(input())
@@ -14,11 +20,12 @@ def generar():
         longitud = int(input())
         if longitud <= 0:
             print("introduce un numero mayor a 0")
-    os.system("echo " + str(cantidad) + " IDs de " + str(longitud) + " caracteres>>./generadorIDs/id.txt")
-    os.system("echo.>>./generadorIDs/id.txt")
+    fil.write(str(cantidad) + " IDs de " + str(longitud) + " caracteres" + saltoLinea)
+    fil.write("" + saltoLinea)
     for i in range(cantidad):
-        os.system("echo " + generador(longitud) + ">>./generadorIDs/id.txt")
-    os.system("echo.>>./generadorIDs/id.txt")
+        fil.write(generador(longitud) + saltoLinea)
+    fil.write("" + saltoLinea)
+    f.close()
 
 def generador(longitud):
     chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
