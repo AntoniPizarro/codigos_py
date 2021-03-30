@@ -1,3 +1,5 @@
+import os
+
 def from_roman(roman):
     romanValues = {"M":1000,"D":500,"C":100,"L":50,"X":10,"V":5,"I":1}
     value = []
@@ -20,3 +22,8 @@ def from_roman(roman):
     else:
         res += romanValues[value[0]]
     return res
+
+if __name__ == "__main__":
+    num = input()
+    print(from_roman(num))
+    os.system("pause")

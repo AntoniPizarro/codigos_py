@@ -1,3 +1,5 @@
+import os
+
 def to_roman(num):
     decimal = num
     res = ""
@@ -41,3 +43,8 @@ def to_roman(num):
         res += "I"
         decimal -= 1
     return res
+
+if __name__ == "__main__":
+    num = int(input())
+    print(to_roman(num))
+    os.system("pause")
