@@ -25,7 +25,7 @@ def generar():
     for i in range(cantidad):
         fil.write(generador(longitud) + saltoLinea)
     fil.write("" + saltoLinea)
-    f.close()
+    fil.close()
 
 def generador(longitud):
     chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
